@@ -18,12 +18,12 @@ git push -u origin main
 ```
 
 ## 2. Dự án Website (Landing Page)
-Đây là trang giới thiệu sản phẩm.
-
 **Folder:** `d:\Backend-Promax-Website`
 
+⚠️ **Lưu ý:** Bạn cần mở terminal tại đúng folder này để chạy lệnh.
+
 ```bash
-cd d:\Backend-Promax-Website
+cd "d:\Backend-Promax-Website"
 git init
 git add .
 git commit -m "Initial commit Website Brand"
