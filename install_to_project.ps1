@@ -46,10 +46,10 @@ foreach ($item in $ItemsToCopy) {
     }
 }
 
-Write-Host "`n[SUCCESS] Backend Pro Max Skill v2.0 đã được tích hợp!" -ForegroundColor Green
+Write-Host "`n[SUCCESS] Backend Pro Max Skill v2.0 integrated!" -ForegroundColor Green
 Write-Host "----------------------------------------------------" -ForegroundColor Cyan
-Write-Host "CÁCH SỬ DỤNG:" -ForegroundColor White
-Write-Host "1. Mở dự án bằng Cursor, Claude Code, hoặc Windsurf."
-Write-Host "2. Dùng lệnh '/backend-pro-max' để thiết kế hệ thống."
-Write-Host "3. Kiểm tra file 'BACKEND_MASTER.md' để xem kiến trúc."
+Write-Host "HOW TO USE:" -ForegroundColor White
+Write-Host "1. Open your project in Cursor, Claude Code, or Windsurf."
+Write-Host "2. Use the '/backend-pro-max' command to design your system."
+Write-Host "3. Check 'BACKEND_MASTER.md' to view the architecture."
 Write-Host "----------------------------------------------------`n" -ForegroundColor Cyan

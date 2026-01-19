@@ -2,75 +2,75 @@
 
 > **The Ultimate Backend Intelligence Hub for AI Coding Agents.**
 > **Copyright © 2026 Odin from Dsoft Team.**
-> Nâng tầm AI của bạn từ "Coder" thành "Senior Backend Architect" với kho tri thức 100+ lĩnh vực.
+> Level up your AI from "Coder" to "Senior Backend Architect" with research data covering 100+ industries.
 
 ---
 
-## 🚀 Tính năng nổi bật (v2.0)
+## 🚀 Key Features (v2.0)
 
 ### 1. Intelligent System Design Generation
-Cơ chế lập luận AI tự động phân tích yêu cầu dự án và đề xuất toàn diện: Architecture, Stack, Database, Security, và Anti-patterns.
+AI reasoning engine that automatically analyzes project requirements and provides comprehensive recommendations: Architecture, Stack, Database, Security, and Anti-patterns.
 
 ### 2. 100+ Industry-Specific Reasoning Rules
-Dữ liệu lập luận chuyên sâu cho mọi ngành nghề:
+In-depth reasoning data for various sectors:
 - **Finance**: Fintech, Banking, Crypto, Trading.
 - **Healthcare**: EHR, Telemedicine, Pharma.
 - **SaaS**: Micro SaaS, B2B Enterprise, DevTools.
 - **Emerging**: AI/ML, Web3, IoT, Quantum Computing.
 
 ### 3. Architecture Persistence (`BACKEND_MASTER.md`)
-Lưu trữ "Nguồn sự thật" (Source of Truth) cho kiến trúc dự án xuyên suốt các phiên chat, đảm bảo AI không bao giờ quên các quyết định thiết kế quan trọng.
+Maintains a "Source of Truth" for project architecture across chat sessions, ensuring the AI never forgets critical design decisions.
 
 ---
 
-## 🛠️ Cách cài đặt (3 Cách)
+## 🛠️ Installation (3 Methods)
 
-### 🚀 Cách 1: One-line Installer (Khuyên dùng - Không cần Node.js)
-Cài đặt siêu tốc bằng 1 dòng lệnh duy nhất.
+### 🚀 Method 1: One-line Installer (Recommended - No Node.js required)
+Instant installation with a single command.
 
 **Windows (PowerShell):**
 ```powershell
-iwr -useb https://raw.githubusercontent.com/nextlevelbuilder/backend-promax-skill/main/install.ps1 | iex
+iwr -useb https://raw.githubusercontent.com/dsoftodin22999/backend-promax-skill/main/install.ps1 | iex
 ```
 
 **Mac / Linux:**
 ```bash
-curl -fsSL https://raw.githubusercontent.com/nextlevelbuilder/backend-promax-skill/main/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/dsoftodin22999/backend-promax-skill/main/install.sh | sh
 ```
 
-### 📦 Cách 2: NPM CLI (Chuẩn cho Node.js dev)
-Nếu bạn đã có Node.js:
+### 📦 Method 2: NPM CLI (Standard for Node.js devs)
+If you have Node.js installed:
 ```bash
 npx backend-promax-skill init
 ```
 
-### 📂 Cách 3: Script nội bộ
-Nếu tải source về máy:
+### 📂 Method 3: Internal Script
+If you downloaded the source locally:
 ```powershell
-.\install_to_project.ps1 -TargetProject "C:\du-an-cua-ban"
+.\install_to_project.ps1 -TargetProject "C:\path\to\your-project"
 ```
 
 ---
 
-## 🧩 Hỗ trợ đa nền tảng (Multi-Agent Support)
+## 🧩 Multi-Platform Support (11 AI Agents)
 
-| Trợ lý AI | Cách sử dụng |
+| AI Assistant | How to Use |
 | :--- | :--- |
-| **Antigravity** | Sử dụng Slash Commands `/backend-pro-max`, `/backend-db`, `/backend-secure` |
-| **Cursor IDE** | Tự động qua `.cursorrules` hoặc gõ `@Rules /reason` |
-| **Claude Code** | Tự động nhận diện qua `.claude/skills/` |
-| **Windsurf** | Tích hợp qua `.windsurf/workflows/backend-promax.md` |
-| **Trae IDE** | Tương thích qua `.trae/skills/backend-promax/` |
-| **GitHub Copilot** | Tích hợp qua `.github/prompts/backend-promax.prompt.md` |
-| **Gemini CLI** | Tự động qua `.gemini/skills/backend-promax/` |
-| **Roo Code** | Tích hợp qua `.roo/rules/backend-promax.md` |
-| **Kiro** | Tích hợp qua `.kiro/steering/backend-promax.md` |
-| **Qoder** | Tích hợp qua `.qoder/skills/backend-promax.md` |
-| **Codex CLI** | Tích hợp qua `.codex/skills/backend-promax/` |
+| **Antigravity** | Use Slash Commands `/backend-pro-max`, `/backend-db`, `/backend-secure` |
+| **Cursor IDE** | Automatic via `.cursorrules` or type `@Rules /reason` |
+| **Claude Code** | Automatically recognized via `.claude/skills/` |
+| **Windsurf** | Integrated via `.windsurf/workflows/backend-promax.md` |
+| **Trae IDE** | Compatible via `.trae/skills/backend-promax/` |
+| **GitHub Copilot** | Integrated via `.github/prompts/backend-promax.prompt.md` |
+| **Gemini CLI** | Automatic via `.gemini/skills/backend-promax/` |
+| **Roo Code** | Integrated via `.roo/rules/backend-promax.md` |
+| **Kiro** | Integrated via `.kiro/steering/backend-promax.md` |
+| **Qoder** | Integrated via `.qoder/skills/backend-promax.md` |
+| **Codex CLI** | Integrated via `.codex/skills/backend-promax/` |
 
 ---
 
-## 🎨 Kiến trúc hệ thống
+## 🎨 System Architecture
 
 ```mermaid
 graph TD
@@ -85,12 +85,12 @@ graph TD
 
 ---
 
-## 💡 Ví dụ câu lệnh "Pro Max"
+## 💡 "Pro Max" Command Examples
 
-- `/backend-pro-max "Fintech" "MoneyGuard"` (Tạo kiến trúc Fintech chuyên nghiệp)
-- `/backend-db "Time-series data for IoT"` (Chọn database tối ưu cho IoT)
-- "Dựa trên quy tắc v2.0, hãy thiết kế logic Idempotency cho hệ thống thanh toán này."
+- `/backend-pro-max "Fintech" "MoneyGuard"` (Generate professional Fintech architecture)
+- `/backend-db "Time-series data for IoT"` (Pick optimal database for IoT)
+- "Based on v2.0 rules, design the Idempotency logic for this payment system."
 
 ---
 > [!IMPORTANT]
-> Backend Pro Max v2.0 không chỉ viết code, nó **thiết kế hệ thống**. Đảm bảo dự án của bạn luôn đạt chuẩn Senior về độ tin cậy và hiệu năng.
+> Backend Pro Max v2.0 doesn't just write code; it **designs systems**. Ensure your project always meets Senior standards for reliability and performance.

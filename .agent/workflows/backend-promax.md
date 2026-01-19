@@ -1,6 +1,6 @@
 # Backend Pro Max v2.0 - Senior Architecture Reasoning
 
-Đây là bộ não của một Senior Backend Architect. Sử dụng các Slash Commands dưới đây để nhận được tư vấn kỹ thuật cấp cao.
+This is the brain of a Senior Backend Architect. Use the Slash Commands below to receive senior-level technical consulting.
 
 ## Slash Commands
 
@@ -22,7 +22,7 @@
 3. Audit the code against the Backend Pro Max security checklist.
 
 ## Senior Priorities
-- **Idempotency**: "Tiền chưa trừ, code chưa chạy tiếp."
-- **Performance**: Latency < 100ms cho core APIs.
+- **Idempotency**: "Funds not deducted, code does not proceed."
+- **Performance**: Latency < 100ms for core APIs.
 - **Reliability**: Zero single point of failure.
-- **Cost**: Tối ưu hóa infra cost ngay từ khâu thiết kế.
+- **Cost**: Optimize infrastructure cost starting from the design phase.
