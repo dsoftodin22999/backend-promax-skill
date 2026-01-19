@@ -1,0 +1,11 @@
+Strategy,Usecase,Implementation,Pros,Cons,Senior_Logic,Invalidation
+Cache-Aside,General Data (UI/Session),Check cache; fetch from DB; update cache.,Simple; Resilient to cache failure.,Stale data; Cache miss delay.,Most popular; easy to scale.,TTL-based / Manual on update
+Write-Through,Financial Ledger / MetaData,Update DB and Cache in one transaction.,Strong Consistency; Fast reads.,Write Latency; Complex.,Best for data that is read often but updated strictly.,Synchronous with DB
+Write-Behind (Back),High-speed logging / Counters,Write to Cache; async sync to DB later.,Ultra-fast writes.,Data loss if cache dies.,Use Redis + Persistence (RDB/AOF).,Handled by Background Sync
+Read-Through,Data Warehousing,Cache middle-layer fetches data automatically.,Clean app code.,Provider complexity.,Abstracts DB logic from app.,Provider Managed
+Refresh-Ahead,Real-time Stock / Crypto prices,Automatically refresh cache before it expires.,Zero-latency for users.,Redundant DB load.,Ideal for high-read global data.,Background Job
+Local Cache (InMemory),Global Config / Enum types,Map/Object inside the application process.,Zero network latency.,No synchronization across instances.,Fastest; risk of drift.,Short TTL / Pub-Sub sync
+Distributed Cache,User Sessions / API Quotas,Redis / Memcached cluster.,Shared state across all nodes.,Network Latency (1-2ms).,Scalable; Central source of truth.,Cluster-wide sync
+Hierarchy Cache,Global High-load apps,Local L1 + Redis L2.,Best Performance.,Maximum Complexity.,Used in Big Tech APIs.,L2-to-L1 Purge messages
+Positive/Negative Cache,Search / Validation,Cache 'NotFound' or 'Error' responses.,Protect DB from repeated dead queries.,Memory waste.,Prevent 'Cache Penetration' attack.,TTL
+Semantic Cache,GraphQL / Search,Cache by data content/meaning.,Granular reuse.,Hard to implement.,Use for heavy complex queries.,Tag-based invalidation

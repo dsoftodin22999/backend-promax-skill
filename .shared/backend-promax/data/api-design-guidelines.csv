@@ -1,0 +1,16 @@
+Standard,Category,Guideline,Reasoning,Example,Priority
+REST,Naming,Use plural nouns; no verbs in URI.,Standardized resource access.,GET /api/v1/orders,HIGH
+REST,Versioning,Use URI versioning (v1; v2).,Prevent breaking changes for clients.,/api/v1/users,HIGH
+REST,Status Codes,201 for Created; 409 for Conflict.,Semantic accuracy for clients.,Return 409 if user exists.,MEDIUM
+REST,Filtering,Use query params for filtering.,Reduce payload size.,/orders?status=shipped,MEDIUM
+GraphQL,Schema,Use clear types and avoid deep nesting.,Efficiency and readability.,type User { id: ID! name: String },HIGH
+GraphQL,Queries,Request only required fields.,Reduce over-fetching.,query { user { name } },MEDIUM
+gRPC,Protobuf,Define clear message structures.,High performance binary serialization.,message User { int32 id = 1; },HIGH
+API,Pagination,Use Cursor-based pagination for large lists.,Avoid 'off-by-one' errors and performance lag.,?cursor=xyz&limit=20,HIGH
+API,Filtering,Consistent query parameter naming.,Ease of use for developers.,?filter[name]=John,MEDIUM
+API,Errors,Standard error response format.,Easier client-side handling.,{ "error": "code", "message": "msg" },HIGH
+API,Documentation,Auto-generate OpenAPI/Swagger.,Ensure documentation is up-to-date.,/api/docs,MEDIUM
+API,Caching,Use ETag and Cache-Control headers.,Improve performance and reduce server load.,Cache-Control: public; max-age=3600,MEDIUM
+API,Idempotency,Support Idempotency-Key header for POST.,Avoid duplicate transactions.,Idempotency-Key: <uuid>,CRITICAL
+API,Rate Limiting,Expose headers for quota info.,Inform clients about their usage.,X-RateLimit-Remaining: 50,MEDIUM
+API,Auth,Use Bearer token in Authorization header.,Standardized security protocol.,Authorization: Bearer <token>,CRITICAL

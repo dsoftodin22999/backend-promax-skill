@@ -1,0 +1,16 @@
+Category,Technique,Implementation,Impact,Senior_Logic,Trade_off
+Database,B-Tree Indexing,Create composite indexes for common query filters.,High Read Speed,Index order must match query order; avoid over-indexing.,Write Latency vs Read Speed
+Database,Partitioning / Sharding,Horizontal split of large tables by key (UserID; Region).,Massive Scale,Distribute load; avoid cross-shard joins.,Complexity vs Scale
+I/O,Connection Pooling,Keep a warm pool of DB connections.,Reduced Latency,Avoid handshake overhead; tune pool size to CPU cores.,Memory vs Latency
+I/O,Non-blocking I/O,Use async/await for network calls.,Concurrency,Never block the thread pool; handles massive connections.,Debug complexity vs Throughput
+Code,Memory Profiling,Identify leaks and high-alloc object pools.,Stability,Reuse objects in HFT/High-load apps to avoid GC pressure.,Code complexity vs Memory efficiency
+Cache,Pre-fetching,Load data into cache before user requests.,Zero Latency,Predictive caching based on user behavior.,Cache waste vs UX Speed
+Cache,Compression,Gzip/Brotli for large JSON payloads.,Bandwidth Saving,Reduce transit time; extra CPU for compression.,CPU vs Bandwidth
+Distributed,Read-Replicas,Direct all SELECT queries to replicas.,Read Scaling,Offload Primary DB; handle replication lag.,Consistency vs Scale
+Distributed,Batch Writes,Combine multiple writes into one transaction.,Reduced IOPS,Buffer writes for 100ms or 1000 items.,Data Loss risk vs Throughput
+Logging,Asynchronous Logging,Write logs to a buffer/queue first.,Performance,Ensure logging doesn't block main request flow.,Log loss risk vs Speed
+DNS,Edge Computing (CDN),Serve static assets and API responses from the edge.,Low Global Latency,Use Cloudfront/Cloudflare KV for global config.,Cost vs Latency
+API,Response Payload Shaving,Remove unnecessary fields from JSON.,Reduced Bandwidth,Use DTOs; never return `select *`.,Dev work vs Bandwidth
+Network,TCP Tuning,Tune Keep-Alive and Congestion Window.,Improved throughput,Optimal for long-lived connections (WebSockets).,Infra complexity vs Speed
+Search,Inverted Index,Denormalize data into Elasticsearch.,Sub-second search,Async sync from SQL to ES via Outbox.,Data drift vs Search speed
+Memory,C-Bindings (FFI),Call C/Rust from Node/Python for heavy math.,Extreme Speed,Use only for heavy compute (Cryptography; Image processing).,Support cost vs Speed

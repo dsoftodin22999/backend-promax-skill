@@ -1,0 +1,16 @@
+Category,Item,Description,Importance,Senior_Logic
+Security,Idempotency,All write/POST APIs must support Idempotency-Key.,Critical,Prevent double-charging or duplicate resource creation.
+Security,Rate Limiting,Implement bucket/window-based limiting per IP/User.,Critical,Protect against brute force and DoS attacks.
+Security,Data Encryption,Sensitive data (PII) encrypted at rest and in transit.,Critical,Compliance (GDPR/HIPAA) and data safety.
+Security,Input Validation,Strict typing and sanitization for all external inputs.,Critical,Prevent SQLi, XSS, and command injection.
+Reliability,Health Checks,Liveness and Readiness probes implemented.,High,Auto-healing and zero-downtime deployments.
+Reliability,Retries & Timeouts,Defined timeouts for all external service calls.,High,Prevent resource exhaustion and hanging processes.
+Reliability,Graceful Shutdown,Service catches SIGTERM and finishes active tasks.,High,Prevent data corruption during deployments.
+Performance,Database Indexing,Explain-plan analysis for all heavy queries.,High,Ensure O(1) or O(log N) lookup speeds.
+Performance,Connection Pooling,Optimized pool sizes for DB and Redis.,High,Avoid 'Too many connections' errors under load.
+Performance,Payload Shaving,Minimize JSON response size (remove nulls/unused fields).,Medium,Reduce Egress cost and client-side latency.
+Observability,Structured Logging,JSON format with RequestID for tracing.,High,Fast debugging in ELK / CloudWatch.
+Observability,Metrics,Define Golden Signals (Latency, Traffic, Errors, Saturation).,High,Proactive alerting before users notice issues.
+Observability,Tracing,OpenTelemetry/Jaeger for distributed requests.,Medium,Identify bottlenecks in microservices.
+DevOps,Migration Strategy,Forward & Backward compatibility for DB migrations.,High,Zero-downtime releases (Expand-Contract).
+DevOps,Secret Management,No secrets in code or env files (use Vault).,Critical,Prevent credential leaks in version control.

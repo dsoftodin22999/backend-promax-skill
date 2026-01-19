@@ -1,0 +1,16 @@
+Data_Type,Volume,Throughput,Consistency_Need,Recommended_DB,Reasoning,Pros,Cons,Scaling_Pattern
+Relational / Structured,Medium-Large,Medium,Strong (ACID),PostgreSQL,Standard for enterprise; best overall features.,Reliable; Massive ecosystem.,Vertically limited.,Read Replicas; Sharding
+Cache / Transient UI,Small-Medium,Extreme,Finality Not Critical,Redis,In-memory speed; advanced data structures.,Ultra-fast; Pub/Sub support.,RAM limited; Data loss risk.,Cluster Mode
+Document / JSON,Large-Extreme,High,Eventual,MongoDB,Flexible schema; scale horizontally.,Easier dev; Scalable.,Joins are slow; High RAM.,Sharding; Replica Sets
+Graph / Networks,Medium,Low,Strong,Neo4j,Optimized for relationship traversal.,Fast traversal; Graph visual.,Niche; Costly at scale.,Vertical; Read-scaling
+Time-Series / IoT,Extreme,High,Eventual,ClickHouse / InfluxDB,Optimized for append-only high speed analytics.,Aggregations are fast.,Not for transactional writes.,Distributed nodes
+Full-text Search,Large,High,Eventual,Elasticsearch / Meilisearch,Inverted index for rapid search.,Native fuzzy search.,RAM hungry.,Sharding
+Financial Ledger,Medium,Medium,Strict (Atomic),SQL with mTLS,Prevent data loss; audit trail.,Atomic; Safe.,Slower than NoSQL.,Scale via App Logic
+Analytic Warehouse,Extreme,Medium,Strong for queries,ClickHouse / Snowflake,Large scale OLAP analysis.,Columnar storage is fast.,Not for single row updates.,Elastic Cloud
+Vector / AI Search,Large,High,Eventual,Pinecone / Milvus,Embedding search for RAG/AI apps.,Specialized index (HNSW).,Complex; Niche.,Cloud Distributed
+Global App Config,Small,Very Low,Global Strong,Consul / etcd,Distributed consensus (Raft).,Global consistency.,Slow writes.,Cluster
+Multi-Model,Large,Medium,Strong,ArangoDB / Azure Cosmos,One DB for Key-Val; Graph; Doc.,Simplify infra.,Jack of all trades.,Cloud Specific
+Columnar Family,Extreme,Extreme,Eventual,Cassandra / ScyllaDB,High availability; no single point of failure.,Write-heavy speed.,Complex query language (CQL).,Ring Architecture
+NewSQL,Large,High,Strong ACID,CockroachDB / TiDB,Distributed SQL with ACID.,Cloud native; Auto-scale.,High infra complexity.,Distributed Consensus
+Key-Value (Cloud),Extreme,Extreme,Eventual,AWS DynamoDB,Serverless scale; zero mgmt.,Infinite scale; Fast.,Cost can spike; No complex joins.,Partition Key
+Object Storage,Extreme,Medium,Eventual,S3 / MinIO,Unstructured data (Images; Bags).,Cheap storage; High durability.,Latency for metadata.,Distributed

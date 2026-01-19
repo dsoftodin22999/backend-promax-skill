@@ -1,0 +1,16 @@
+Strategy,Usecase,Implementation,Impact,Senior_Logic,Trade_off
+Circuit Breaker,Distributed Systems / Microservices,Open circuit when failure rate > 50%.,Prevent system-wide collapse.,Stop the bleeding early; provide fallback.,Partial vs Total Outage
+Retries with Exponential Backoff,Transient Network Errors,Wait 1s, 2s, 4s... with jitter.,Reduce load on failing system.,Prevent 'Thundering Herd' on recovery.,Latency vs Recovery
+Rate Limiting,API Protection,Redis-based Fixed/Sliding Window.,Prevent abuse.,Protect resources for legitimate users.,Revenue vs Stability
+Graceful Degradation,High Load / Partial Outage,Turn off non-core features (Search; Recs).,System stays alive for core logic.,User experience > Total failure.,UX vs Availability
+Health Checks,Load Balancing,Liveness & Readiness probes.,Route traffic to healthy nodes.,Auto-healing integration (K8s).,Speed vs Accuracy
+Redundancy (Active-Active),Critical Enterprise,Deploy to 2+ Regions simultaneously.,99.99%+ Uptime.,Handle regional cloud outage.,Cost vs Reliability
+Database Failover (HA),Enterprise Storage,Automatic Leader election (Raft/Paxos).,Data Availability.,Zero data loss; minimal downtime.,Write Latency vs Safety
+Bulkhead Pattern,Monolithic / Thread pools,Isolate resources for 'Payment' vs 'Browsing'.,Contain failure to one area.,One bad component doesn't kill others.,Resource waste vs Safety
+Chaos Engineering,Proactive Reliability,Inject failures in production (Gremlin).,Identify weak points before they occur.,Build a 'Self-healing' mindset.,Risk vs Confidence
+Observability (SLI/SLO),Monitoring,Track Latency; Error Rate; Throughput.,Early warning system.,Actionable alerts via Grafana/ELK.,Alert fatigue vs Visibility
+Load Shedding,Extreme Surge,Reject 20% of lowest priority traffic.,Protect system at 95% capacity.,Prioritize VIP/Paying users.,Client UX vs Stability
+Timeouts,Inter-service calls,Set hard limits (e.g. 500ms).,Prevent resource exhaustion.,Fail fast rather than hanging.,Partial Data vs Total Failure
+Idempotency,Payment / Side Effects,Store RequestID; skip if processed.,Data Integrity.,Mandatory for any write in distributed env.,Logic complexity vs Safety
+Backup & Restore,DR (Disaster Recovery),Daily snapshots; offsite storage.,Last line of defense.,Test restore weekly.,Cost vs Peace of Mind
+Deployment (Blue-Green),Zero-Downtime Updates,Switch traffic between two identical environments.,Safe releases.,Instant rollback capability.,Infra Cost vs Safety

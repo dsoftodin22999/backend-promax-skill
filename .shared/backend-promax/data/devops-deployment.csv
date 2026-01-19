@@ -1,0 +1,16 @@
+Category,Standard,Tooling,Senior_Logic,Trade_off,Scalability
+CI/CD,Automated Testing,GitHub Actions / GitLab CI,Fail build on < 80% coverage; auto-deploy to staging.,Speed vs Safety,High
+Containerization,Standard Image,Docker / Multi-stage builds,Minimal size (Alpine/Distroless); non-root user.,Efficiency vs Simplicity,High
+Orchestration,High Availability,Kubernetes (K8s) / Helm,Auto-scaling based on CPU/RAM; Rolling updates.,Complexity vs Scale,Extreme
+Infrastructure,IaC (Code),Terraform / Pulumi,Version control everything; modular reusable blocks.,Standardization vs Speed,High
+Observability,Tracing,OpenTelemetry / Jaeger,Trace distributed requests across all microservices.,Visibility vs Overhead,High
+Observability,Metrics,Prometheus / Grafana,Define Golden Signals: Latency; Errors; Traffic; Saturation.,Insight vs Storage,High
+Observability,Logging,ELK (Elastic; Logstash; Kibana),Structured JSON logging; centralized search.,Searchable vs Cost,High
+Cloud Native,IAM / Security,AWS IAM / GCP Roles,Principle of Least Privilege; rotating keys.,Security vs Ease,Medium
+Cloud Native,Networking,VPC / Subnets / Security Groups,Isolate DB in private subnet; use VPN/JumpHost.,Safety vs Latency,Medium
+Deployment,Canary Release,ArgoCD / Flagger,Direct 5% traffic to new version; auto-rollback on error.,Reliability vs Speed,Extreme
+Deployment,Feature Flags,LaunchDarkly / Unleash,Decouple deployment from release; test in prod safely.,Control vs Code Debt,High
+Monitoring,Synthetic Checks,DataDog / Checkly,Simulate user journeys every 5 mins from global locations.,UX Check vs Cost,Medium
+Database,Migration,Liquibase / Flyway,Zero-downtime DB migrations (Expand-Contract pattern).,Consistency vs Speed,High
+Cost,FinOps,AWS Cost Explorer / Kubecost,Tag resources by team; spot instances for non-crit load.,Budget vs Power,Medium
+Security,Scanning,Snyk / Trivy,Scan Docker images and deps for CVEs in CI pipeline.,Safety vs Velocity,High

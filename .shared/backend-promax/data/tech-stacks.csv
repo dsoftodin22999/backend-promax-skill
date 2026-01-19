@@ -1,0 +1,10 @@
+Domain,Project_Type,Tech_Stack,Reasons,Pros,Cons,Security_Focus,Performance_Tier
+High Performance,High Frequency Trading (HFT),Rust/Actix,Low-level memory control without GC overhead.,Memory safety; Extreme concurrency.,High learning curve; Slower dev speed.,Memory Safety; Zero-cost abstractions.,Ultra-Low Latency
+High Performance,Video Streaming,Go/Fiber,Built-in concurrency (Goroutines) for massive I/O. ,High throughput; Fast startup.,Less expressive than Rust.,TLS Encryption; Hardened network stack.,High Bandwidth/IO
+General Purpose,Social Media / Real-time,Node.js (Fastify/TypeScript),Event-loop optimized for small I/O intensely.,Unified JS/TS; Large ecosystem.,Single-threaded bottleneck for CPU.,JWT/OAuth2; Input validation.,Real-time/I/O
+Enterprise,Fintech Core Banking,Java (Spring Boot),Proven reliability; Multi-threading; Strong ecosystem.,Strict typing; Robust transaction management.,Higher memory consumption.,PCI-DSS; Mutual TLS; HSM integration.,Strong Consistency
+Rapid Build,SaaS MVP,Python (FastAPI),Pydantic validation; Asynchronous; Fastest development.,Developer productivity; Type safety.,Slower execution than Go/Rust.,Bearer Tokens; CSRF Protection.,Developer Velocity
+Scalable Data,AI / ML Pipelines,Python (Django/Ray),Rich ML libraries (PyTorch/TensorFlow) + Distributed compute.,Integrated ecosystem.,Heavy footprint.,Data isolation; Model security.,Compute Intensive
+Search Engine,E-commerce Search,Go/Elasticsearch,Native interop; Low memory overhead for search nodes.,Speed; Distributed.,Elasticsearch management.,API Key Auth; Index encryption.,Sub-second search
+IoT,Smart Home,C++/Drogon,Minimal footprint for embedded gateway.,Highest efficiency.,Manual memory management.,Firmware signing; Secure boot.,Minimal overhead
+Backend Pro Max,Design Intelligent Agent,Node.js + Python,Hybrid: Speed of JS for API + Python for reasoning logic.,Best of both worlds.,Inter-process complexity.,Prompt injection protection.,Logic Depth

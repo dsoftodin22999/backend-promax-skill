@@ -1,0 +1,16 @@
+Category,Threat_Model,Mitigation_Strategy,Required_Action,Regulatory_Compliance,Priority,Reasoning
+Authentication,Broken Authentication,Multi-factor Auth (MFA); Strong Hashing (Argon2).,Implement JWT with refresh rotation; session invalidation.,PCI-DSS; GDPR,CRITICAL,Prevent account takeovers / Identity theft.
+Authorization,BOLA / IDOR,Attribute Based Access Control (ABAC); Resource Ownership checks.,Verify requester ID matches resource ID for every fetch.,HIPAA; GDPR,CRITICAL,Prevent unauthorized data leakage between users.
+Injection,SQLi / NoSQLi / XSS,Parameterized Queries; Input Sanitization; Content Security Policy.,Use ORMs/Query builders; Strict Pydantic/Joi validation.,OWASP Top 10,CRITICAL,Prevent malicious code execution / data theft.
+Data Management,Data Breach at Rest,AES-256 Encryption; Field-level encryption.,Encrypt PII in DB; use Vault/KMS for keys.,GDPR; PCI-DSS,HIGH,Ensure data is useless if physically stolen.
+Communication,MitM (Man-in-the-Middle),mTLS; TLS 1.3 only; Certificate Pinning.,Disable HTTP; Redirect to HTTPS; Secure Cookies.,General Secure,HIGH,Encrypt data in transit across public/private networks.
+Rate Limiting,DoS / Brute Force,Leaky Bucket / Token Bucket algorithms.,Implement Redis-based rate limit by IP and UserID.,Security Best Practice,MEDIUM,Protect service availability; prevent scrapers.
+Error Handling,Information Disclosure,Generic Error Messages; Detailed internal logging.,Sanitize API responses; Log stack traces to private observability.,Secure System,MEDIUM,Prevent attackers from learning internals via errors.
+Logging & Audit,Tampering / Non-repudiation,Immutable Logs; Audit Trail.,Log all admin actions; use CloudWatch/ELK for auditing.,PCI-DSS; SOC2,HIGH,Provide forensic evidence after an incident.
+Third Party,Supply Chain Attack,Dependency Scanning (Snyk); Software Bill of Materials (SBOM).,Pin versions; update dependencies monthly.,SOC2,MEDIUM,Prevent malicious code entering via libraries.
+Secrets,Hardcoded Credentials,Environment Variables; Secrets Manager (AWS/GCP).,Never commit .env or keys; use inject at runtime.,General Secure,CRITICAL,The most common cause of cloud breaches.
+Internal Network,Lateral Movement,Zero Trust Architecture; Micro-segmentation.,Isolate services in VPC; only allow necessary ports.,Enterprise Grade,MEDIUM,Contain a breach if one service is compromised.
+API Security,Mass Assignment,DTO usage; Strict Schema Mapping.,Explicitly map inputs to models; avoid passing req.body directly.,OWASP Top 10,MEDIUM,Prevent attackers from updating restricted fields (e.g. isAdmin).
+PII Protection,Privacy Leak,Data Anonymization / Pseudo-anonymization.,Remove identifying info from logs; Hash email/phone for analytics.,GDPR,CRITICAL,Legal requirement to protect user privacy.
+Financial Data,Transaction Fraud,Idempotency Keys; Dual Authorization (Approvals).,Mandatory idempotency for payments; log all change states.,PCI-DSS,CRITICAL,Prevent financial loss due to system errors/abuse.
+Infrastructure,Unsecured Buckets,Public S3/MinIO scans.,All buckets private by default; use CloudFront pre-signed URLs.,General Secure,HIGH,Prevent unauthorized access to media/backups.

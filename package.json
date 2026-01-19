@@ -1,0 +1,31 @@
+{
+    "name": "backend-promax-skill",
+    "version": "2.0.0",
+    "description": "The Ultimate Backend Intelligence Hub for AI Coding Agents.",
+    "main": "index.js",
+    "bin": {
+        "backend-promax-skill": "./bin/cli.js"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "ai",
+        "backend",
+        "architecture",
+        "cursor",
+        "windsurf",
+        "claude",
+        "claude",
+        "antigravity"
+    ],
+    "author": "Odin from Dsoft Team",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nextlevelbuilder/backend-promax-skill.git"
+    },
+    "engines": {
+        "node": ">=14.0.0"
+    }
+}

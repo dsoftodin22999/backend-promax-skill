@@ -1,0 +1,21 @@
+Category,Industry,Anti_Pattern,Reason,Senior_Logic
+Finance,Banking,Firebase / NoSQL as primary,Lack of strong ACID compliance for transactions.,Use RDBMS with Serializable isolation.
+Finance,Fintech,Client-side balance calculation,Security risk (Tampering).,Always calculate balance on the server via Ledger.
+Healthcare,EHR,Plain-text PII storage,HIPAA Violation.,Encrypt at rest (AES-256) and use Field Level Encryption.
+Healthcare,Telemedicine,Storing video locally,Compliance risk and scalability.,Use S3 with HIPAA-compliant encryption or KMS.
+E-commerce,Retail,Synchronous inventory update,Bottleneck during flash sales.,Use Event-Driven (Kafka/RabbitMQ) for eventual consistency.
+E-commerce,General,Auto-incrementing IDs for URLs,Scraping risk.,Use UUID v7 or HashIDs.
+Tech & SaaS,B2B,Hardcoded permissions,Not scalable for complex enterprise roles.,Use RBAC or ABAC (Policy-based).
+Tech & SaaS,Micro SaaS,Premature Microservices,Extreme complexity overhead.,Start with a Modular Monolith.
+Real-time,Gaming,Standard HTTP for movement,Too much latency/overhead.,Use UDP or WebSockets.
+Real-time,Streaming,Single region storage,High latency for global users.,Use Multi-region S3 with CloudFront CDN.
+AI/ML,Inference,Synchronous model loading,Blocking the main thread.,Load models asynchronously / Use a sidecar.
+AI/ML,Data,CSV as a database,Performance and concurrency issues.,Use Parquet/Avro for big data; SQL for metadata.
+DevOps,General,Passwords in environment variables,Security risk (Leaked logs).,Use Secret Managers (Vault / AWS Secrets).
+DevOps,K8s,Running as root user,Security risk (Container breakout).,Use SecurityContext with non-root UID.
+API,General,No Rate Limiting,Vulnerable to DoS/Brute force.,Always implement Rate Limiting (Redis-based).
+API,General,Versioning in Body/Headers,Complex to route and cache.,Use URI versioning (e.g. /v1/).
+Database,General,No Indexing on foreign keys,Slow JOINs and lookups.,Always index FKs and frequently filtered columns.
+Database,General,Deleting data permanently,Loss of audit trail.,Use Soft Deletes (deleted_at) or History Tables.
+Reliability,General,Retrying without jitter,Thundering Herd on recovery.,Use Exponential Backoff with Jitter.
+Reliability,General,No Circuit Breakers,Cascading failures.,Open circuit after consecutive fail thresholds.

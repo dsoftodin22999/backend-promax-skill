@@ -1,0 +1,104 @@
+Category,Sub_Category,Recommended_Architecture,Primary_Stack,Secondary_Stack,Database_Strategy,Security_Level,Key_Features,Anti_Patterns
+Tech & SaaS,Micro SaaS,Modular Monolith,Node.js (Fastify/TS),Python (FastAPI),PostgreSQL + Redis,High,Multi-tenancy; Generic APIs,Over-engineering with Microservices
+Tech & SaaS,B2B Enterprise,Microservices,Java (Spring Boot),Go,PostgreSQL + Elastic,Critical,RBAC; Audit Logs; SSO,Ignoring data isolation
+Finance,Fintech,Event-Driven (EDA),Go,Rust,PostgreSQL (ACID) + Kafka,Critical,Idempotency; mTLS; Ledger,Firebase; Weak consistency DBs
+Finance,Crypto/Web3,Decentralized / Hybrid,Rust (Actix),Node.js,PostgreSQL + Indexing Service,Critical,Wallet Integration; Cold Storage,Storing private keys in DB
+Healthcare,Electronic Health Records,Service Oriented (SOA),Java,Python,SQL (Encrypted at rest) + FHIR,Critical,HIPAA Compliance; Data Masking,Plain-text PII storage
+Healthcare,Pharmacy,Modular Monolith,C# (.NET),Node.js,SQL Server,High,Inventory Tracking; E-prescribing,Lack of audit trail
+E-commerce,Marketplace,Microservices,Go,Node.js,PostgreSQL + MongoDB + Elastic,High,Shopping Cart; Order Mgmt,Monolith at scale
+E-commerce,Subscription Box,Monolith / Serverless,Node.js,Python,PostgreSQL + Stripe,Medium,Recurring Billing; CRM,Scaling before PMF
+Services,Beauty/Spa,Serverless / Monolith,Node.js,Python,PostgreSQL,Medium,Booking Logic; Notifications,Overselling capacity
+Services,Legal/Consulting,Monolith,Python (Django),PHP (Laravel),SQL (Encrypted),High,Document Mgmt; Billing,Insecure document storage
+Creative,Portfolio,Static / Serverless,HTML/Next.js,N/A,Markdown / Supabase,Low,Image Optimization; SEO,Heavy images; No SEO meta
+Creative,Gaming Backend,Real-time Mesh,C++,Go (Fiber),Redis + ScyllaDB,High,UDP/WebSockets; Matchmaking,Synchronous HTTP calls
+Emerging Tech,AI Platform,Distributed Compute,Python (FastAPI),Go,Vector DB (Pinecone) + SQL,High,RAG Pipelines; Model Serving,Blocking main thread with ML
+Emerging Tech,IoT Network,Edge + Central,C++ (Drogon),Go,InfluxDB + MQTT,Medium,Device Management; OTA,Massive poll without Pub/Sub
+Real-time,Streaming,Event-Driven,Go,Rust,Cassandra + Redis,High,Video Transcoding; Global CDN,Single point of failure
+Real-time,Chat/Social,Pub/Sub,Node.js (Socket.io),Erlang/Elixir,MongoDB + Redis,High,Message Persistence; Presence,Scaling without partitions
+Government,E-portal,Micro-segmentation,Java,C#,Hardened SQL,Critical,Zero Trust; PKI; Scalabiliy,Vendor lock-in; Closed source libs
+Education,LMS (Learning),Modular Monolith,PHP (Moodle),Node.js,PostgreSQL + S3,Medium,Video Lessons; Quiz Engine,No CDN for video content
+Logistics,Supply Chain,Event-Driven,Java,Go,Graph DB (Neo4j) + SQL,High,Route Optimization; Tracking,Ignoring offline-first sync
+Logistics,Delivery App,Microservices,Node.js,Go,PostgreSQL + PostGIS,High,Geo-fencing; Real-time Map,Inefficient geo-queries
+Automotive,Telematics,Stream Processing,Go,Python,ClickHouse + MQTT,High,Vehicle Diagnostics; Alerts,High latency in alerts
+Energy,Smart Grid,Distributed Control,Rust,C++,Time-series DB,Critical,Load Balancing; Security,Grid destabilization via lag
+Retail,Inventory Management,Event-Driven,C#,Java,PostgreSQL + Redis,High,Stock Sync; POS Integration,Inconsistent stock counters
+Retail,Loyalty Program,Serverless,Node.js,Python,DynamoDB,Medium,Points Engine; Rewards,Expensive per-write costs
+Agriculture,IoT Precision,Edge Computing,Python,C++,SQLite + LoRaWAN,Medium,Sensor Data; Offline Sync,High battery drain on devices
+Space Tech,Satellite Comms,Hardened Real-time,Rust,C,Specialized FS,Critical,Radiation Hardened; Low power,Standard OS overhead
+AI/ML,Model Training,Distributed Orchestration,Python (Ray),Rust,S3 + Vector DB,High,GPU Scheduling; Data Prefetch,I/O bottlenecks
+AI/ML,Inference API,Serverless / Microservices,Go,Python (FastAPI),Redis + Pinecone,High,Auto-scaling; Cache,High cold-start latency
+Web3,NFT Marketplace,Hybrid,Node.js,Go,PostgreSQL + IPFS,High,Smart Contracts; Minting,Metadata centralization
+Web3,DAO Governance,On-chain + Off-chain,Go,Rust,SQL + IPFS,High,Voting Logic; Snapshot sync,Opaque voting rules
+Cybersecurity,SIEM / SOC,Stream Processing,Go,Rust,Elasticsearch + ClickHouse,Critical,Log Ingestion; Threat Hunting,Slow query response
+Cybersecurity,Identity Mgmt,Zero Trust,Java,Go,SQL + Vault,Critical,MFA; OAuth2; SAML,Storing passwords in logs
+Data,Analytics Platform,OLAP,Python,Go,Snowflake / ClickHouse,High,Dashboard; Big Data Query,OLTP for heavy analytics
+Data,Data Engineering,ETL Pipelines,Python (Airflow),Java (Spark),S3 + Delta Lake,High,Data Quality; Lineage,Lack of idempotency
+MarTech,Email Automation,Event-Driven,Node.js,Go,PostgreSQL + Redis,Medium,Campaign Engine; Tracking,SMTP blacklisting
+MarTech,AdTech,Ultra-Low Latency,Rust,Go,Aerospike + Redis,High,Bidding; RTB,Latency > 50ms
+AdTech,DSP / SSP,High-performance,Rust,C++,Redis,High,Million req/sec; low latency,High infra cost
+Gaming,Matchmaking,Real-time,Go,C++,Redis,High,Player grouping; ELO calc,Slow DB lookups
+Gaming,MMORPG,Stateful Mesh,C++,Erlang,ScyllaDB,High,World Sync; Persistance,Stale state
+Travel,Booking Engine,Distributed Transaction,Java,Go,PostgreSQL (Serializable),High,Inventory Lock; Search,Overbooking
+Travel,Flight Meta-search,Aggregation,Go,Python,Redis + SQL,Medium,API Scraping; Caching,Stale prices
+PropTech,Real Estate,Search Centric,Node.js,Python,PostgreSQL + Elastic,Medium,Map Search; MLS Sync,Slow sync cycles
+PropTech,Smart Building,IoT,Go,Python,InfluxDB,High,HVAC Control; Energy,Insecure local gateways
+LegalTech,Case Management,Document Centric,Python,Java,SQL (Encrypted),High,Full-text search; ACL,Leaking sensitive docs
+LegalTech,Contract AI,ML Pipeline,Python,Node.js,Vector DB,High,OCR; Semantic Search,Slow processing
+FinTech,Trading Platform,Low Latency,Rust,Go,C++,Critical,Order Book; Fix API,GC Pauses
+FinTech,Insurance Tech,Rules Engine,Java,C#,SQL,High,Underwriting; Claims,Opaque logic
+InsurTech,Claims Processing,Workflow,C#,Java,SQL,High,Image recognition; Fraud,Manual bottleneck
+RegTech,Compliance Monitor,Audit Centric,Go,Java,Immutable DB,Critical,Transaction Monitoring,Deleted audit logs
+EdTech,Virtual Classroom,Real-time Video,Go,Node.js,Redis + WebRTC,Medium,Live Video; Whiteboard,High latency
+SalesTech,CRM,SaaS,Node.js,Python,PostgreSQL + Redis,Medium,Lead Tracking; Pipeline,Slow dashboard
+HRTech,Payroll,Strict Transaction,Java,C#,SQL (ACID),High,Salary Calc; Tax Compliance,Calculation errors
+HRTech,Recruitment / ATS,Search Centric,Node.js,Python,PostgreSQL + Elastic,Medium,Resume Parsing; Ranking,Bias in ranking
+GovTech,Voting System,Secure / Immutable,Rust,Go,Blockchain / SQL,Critical,Anonymity; Auditability,Voter fraud
+BioTech,Genomics,Big Data,C++,Python,Object Storage,High,Sequence Alignment,Computing cost
+BioTech,Lab Management,LIMS,Java,Python,SQL,High,Sample Tracking,Lost samples
+AgriTech,Crop Monitoring,Computer Vision,Python,C++,S3 + SQL,Medium,Satellite images,Slow processing
+AeroTech,Flight Control,Real-time,Rust,C,Hardened OS,Critical,Safety Critical,System crash
+DeepTech,Quantum Algo,Compute Intensive,Python,C++,Quantum Simulator,High,Algorithm dev,Resource lack
+DeepTech,Nanotech,Precision,Python,C++,Control System,High,Micro-control,Lag
+Media,Newsletter,SaaS,Node.js,Python,PostgreSQL,Medium,List mgmt; Delivery,Spam
+Media,Video Platform,Streaming,Go,C++,S3 + CDN,High,Encoding; DRM,Buffering
+Hospitality,Hotel Booking,Inventory,Java,C#,SQL,High,Room lock; Pricing,Overbooking
+Hospitality,Food Delivery,Logistics,Node.js,Go,PostgreSQL + PostGIS,High,Order flow; Tracking,Late delivery
+CleanTech,Carbon Tracking,Audit,Python,Node.js,SQL,High,Carbon Footprint,Data gap
+CleanTech,Smart Grid,Control,Go,Rust,Time-series,Critical,Grid balance,Blackout
+AutoTech,Self Driving,Inference,C++,Python,Edge Compute,Critical,Sensors; Mapping,Latency
+AutoTech,Connected Car,IoT,Go,Rust,MQTT + SQL,High,Remote start; Status,Remote hack
+SpaceTech,Ground Station,Telemetry,C++,Java,NoSQL,Critical,Data downlink,Data loss
+SpaceTech,Mars Rover,Robotics,C,C++,Hardened,Critical,Remote Op; Latency,Power loss
+Quantum,Cryptography,Security,Rust,C++,Custom Hardware,Critical,Q-Safe encryption,Encryption break
+Search,Global Web Search,Index Heavy,C++,Go,BigTable,Critical,Crawling; PageRank,Stale index
+Security,Endpoint Protection,Real-time,C++,Rust,Local + Cloud,Critical,Threat Detection,High CPU
+Security,Vulnerability Scan,Audit,Python,Go,Nmap/SQL,High,Scan engine,False positive
+DevOps,CI Tool,Automation,Go,Rust,S3,High,Build pipeline,Slow build
+DevOps,Monitoring,Observability,Go,Java,ClickHouse,High,Dashboard,Missing metrics
+Web3,L2 Scaling,Blockchain,Rust,Go,ZK Proofs,Critical,Throughput,Security bug
+Web3,Wallet,Security,Rust,Swift/Kotlin,Hardware,Critical,Seed phrase,Private key leak
+Data,Lakehouse,Big Data,Java,Scala,S3 + Delta,High,Query engine,Data inconsistency
+Search,Vector Search,AI,C++,Python,FAISS / Pinecone,High,Similarity,Slow recall
+SaaS,Microservice Starter,Template,Node.js,Go,SQL,Medium,Auth; Boilerplate,Complex setup
+SaaS,Multi-tenant App,Isolation,Java,C#,SQL (Schema-per-tenant),High,Data isolation,Noisy neighbor
+Fintech,Personal Finance,Aggregation,Python,Node.js,SQL,Medium,Plaid integration,Data de-sync
+Fintech,Payment Gateway,High-volume,Go,Java,SQL,Critical,Acquiring; Clearing,Downtime
+Healthcare,Telemedicine,Real-time,Node.js,WebRTC,SQL,Critical,HIPAA Video,Video drop
+Healthcare,Medical Device,Real-time,C,C++,Hardened,Critical,Sensor data,System halt
+E-commerce,Inventory Sync,Eventual,Go,Java,Redis,High,Multi-channel sync,Double selling
+E-commerce,Flash Sale,High Througput,Go,Redis,PostgreSQL,High,Locking; Scaling,Crash
+Legal,Case Workflow,Document,Python,Node.js,SQL,Medium,Task mgmt,Lost status
+Creative,NFT Art Gen,Compute,Python,Node.js,S3,Medium,Generative art,Slow render
+Gaming,Level Editor,Real-time,C++,Node.js,S3,Medium,Collab edit,Conflict
+Gov,Citizen ID,Critical,Java,Go,SQL,Critical,Biometrics,Data leak
+Ed,Proctoring,Security,Node.js,Python,WebRTC,High,Cheat detect,Privacy
+Logistics,Warehouse Mgmt,IoT,Java,C#,SQL,High,WMS; Picking,Human error
+Property,Smart Lock,IoT,C++,Node.js,MQTT,Critical,Remote unlock,Locked out
+Legal,Law Firm CRM,SaaS,Node.js,Python,SQL,Medium,Lead; Case,Slow sync
+Bio,Sequence Viewer,Viz,JS/Rust,C++,S3,High,Genomics,Big payload
+Agri,Precision Water,IoT,Python,C++,SQLite,Medium,Watering,Pump fail
+Aero,Maintenance Tech,Mobile/Offline,C#,Swift,SQL,High,Repair logs,Missing logs
+Deep,Fusion Control,Plasma,C++,Fortran,Hardened,Critical,Magnetic field,Plasma loss
+Media,Podcast Host,Audio,Node.js,Go,S3,Medium,RSS; Storage,Slow download
+Hospitality,Tour Guide App,Mobile/Geo,Swift/Kotlin,Node.js,PostgreSQL,Medium,GPS; Offline,Battery drain
+Clean,Solar Monitor,IoT,Python,C++,InfluxDB,Medium,Wattage,De-sync

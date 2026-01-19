@@ -1,0 +1,10 @@
+Pattern,Project_Scale,Core_Usecase,Complexity,Scalability,Cost_Efficiency,Dev_Velocity,Reliability_Strategy,Trade_off
+Monolithic,Small-Medium,Internal Tools; MVPs; Low complexity apps.,Low,Vertical; Limited Horizontal,High (Single server),Very High (Simple deploy),High (Less failure points),Scalability vs Simplicity
+Microservices,Large-Extreme,Complex Enterprise; Global Scale apps.,Extreme,High (Granular scale),Medium (Infra overhead),Medium (Team isolation),Distributed; CircuitBreakers,Complexity vs Scalability
+Event-Driven (EDA),Medium-Large,Fintech; Real-time analytics; Pub/Sub.,High,High (Asynchronous),High (Decoupled),Medium,Eventual Consistency; Sagas,Latency vs Consistency
+Serverless / FaaS,Variable,Burst traffic; Webhooks; Cron jobs.,Medium,Instant / Auto,Extreme (Pay-per-use),High (Focus on logic),Cloud Managed; Auto-retry,Cold Start vs Cost
+Shared Kernel,Medium,Multi-tenant SaaS with shared core logic.,Medium,Reliant on DB scale,High,High,Tenant Isolation; RBAC,Isolation vs Reusability
+CQRS / ES,Large,Banking (Audit trails); Booking systems.,Extreme,High (Separate Read/Write),Medium,Low (Complex logic),Auditability; Strong Data History,Auditability vs Complexity
+Modular Monolith,Medium-Large,Growing SaaS moving towards Microservices.,Medium,Vertical + Preliminary Horiz,High,High,Domain isolation within code,Isolation vs Early Overhead
+SOA (Service Oriented),Enterprise,Legacy migration; Integration of many apps.,High,Medium,Low (Heavy ESB),Low,ESB Monitoring; Reliability,Integration vs Overhead
+P2P / Mesh,Niche,Decentralized apps; Video conferencing.,Extreme,Distributed,High (No central server),Low,Consensus algorithms,Availability vs Consensus
