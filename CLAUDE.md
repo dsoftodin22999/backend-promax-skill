@@ -1,23 +1,27 @@
-# Backend Pro Max Skill Environment
+# Backend Pro Max Skill
 
-## Project Overview
-This workspace is a specialized **Backend Intelligence Hub**. It uses data-driven reasoning to design and implement high-fidelity backend systems.
+This project uses **Backend Pro Max Skill** for intelligent architecture reasoning.
 
-## Rules & Skills
-- **Skill Path**: `.claude/skills/backend-promax/SKILL.md`
-- **Data Path**: `.shared/backend-promax/data/`
+## Quick Reference
 
-## Core Commands
-- **Reasoning**: Always query the `.csv` files in the data path before proposing an architecture or tech stack.
-- **Workflow**: 
-    1. Identify requirement.
-    2. Lookup reasoning data.
-    3. Propose Senior-level solution.
+- **Architecture Generation**: Use `/backend-pro-max [industry] [project]`
+- **Database Selection**: Use `/backend-db [data_type]`
+- **Security Audit**: Use `/backend-secure`
 
-## Tech Stack Guidelines
-- Refer to `tech-stacks.csv` for optimal framework choice (e.g., Rust for HFT, Go for Streaming, Python for AI).
+## Knowledge Base Location
 
-## Architectural Norms
-- Prefer **Modular Monolith** for growth stages.
-- Prefer **Event-Driven** for complex distributed states.
-- Always include **Security Deep Dive** and **Edge Case** analysis.
+All reasoning data is located in `.shared/backend-promax/data/`:
+
+- `backend-reasoning.csv` - 100+ industry-specific architecture patterns
+- `database-decision-matrix.csv` - Database selection guide
+- `security-deep-dive.csv` - Security protocols and compliance
+- `testing-strategies.csv` - Testing patterns for all levels
+- `cloud-patterns.csv` - AWS, GCP, Azure patterns
+
+## Generated Files
+
+- `BACKEND_MASTER.md` - Your persisted architecture decisions
+
+## Documentation
+
+For full documentation, see the [README](https://github.com/dsoftodin22999/backend-promax-skill).

@@ -1,0 +1,28 @@
+Provider,Service_Category,Service_Name,Use_Case,Alternative,Cost_Tier,Scaling_Model,Best_For,Avoid_When
+AWS,Compute,Lambda,Serverless API/Events,ECS Fargate,Pay-per-use,Auto,Event-driven workloads;Microservices,Long-running processes >15min
+AWS,Compute,ECS Fargate,Container workloads,EKS,Medium,Task-based,Stateless containers;Batch jobs,Complex orchestration needs
+AWS,Compute,EKS,Kubernetes clusters,ECS,High,Pod-based,Multi-cloud strategy;Complex workloads,Simple applications
+AWS,Database,RDS PostgreSQL,Relational data,Aurora,Medium,Vertical+Read Replicas,ACID transactions;Complex queries,Massive write throughput
+AWS,Database,Aurora Serverless,Variable load DB,RDS,Pay-per-use,Auto,Unpredictable traffic;Dev/Test,Consistent high load
+AWS,Database,DynamoDB,Key-value/Document,MongoDB Atlas,Pay-per-use,Auto,High throughput;Global tables,Complex joins;Ad-hoc queries
+AWS,Cache,ElastiCache Redis,Session/Cache,MemoryDB,Medium,Node-based,Low latency cache;Pub/Sub,Persistence requirements
+AWS,Queue,SQS,Message queue,RabbitMQ,Pay-per-use,Auto,Decoupling services,Strict ordering (use FIFO)
+AWS,Stream,Kinesis,Real-time streaming,Kafka (MSK),Medium,Shard-based,Log aggregation;Analytics,Low throughput needs
+AWS,Storage,S3,Object storage,MinIO,Pay-per-use,Unlimited,Media files;Backups;Data lake,Frequent small reads
+GCP,Compute,Cloud Run,Container serverless,Cloud Functions,Pay-per-use,Auto,HTTP services;Containers,Long WebSocket connections
+GCP,Compute,Cloud Functions,Event-driven,Cloud Run,Pay-per-use,Auto,Simple triggers;Webhooks,Complex dependencies
+GCP,Compute,GKE,Kubernetes,Cloud Run,High,Pod-based,Production workloads,Simple services
+GCP,Database,Cloud SQL,Managed SQL,AlloyDB,Medium,Vertical,Standard PostgreSQL/MySQL,Global distribution
+GCP,Database,Firestore,Document DB,MongoDB Atlas,Pay-per-use,Auto,Mobile/Web apps;Real-time,Complex transactions
+GCP,Database,BigQuery,Data warehouse,Snowflake,Pay-per-query,Serverless,Analytics;BI,OLTP workloads
+GCP,Database,Spanner,Global SQL,CockroachDB,High,Auto,Global consistency;Finance,Cost-sensitive projects
+Azure,Compute,Azure Functions,Serverless,Container Apps,Pay-per-use,Auto,Event processing,.NET ecosystem preferred
+Azure,Compute,Container Apps,Container serverless,AKS,Medium,Auto,Microservices,Complex orchestration
+Azure,Compute,AKS,Kubernetes,Container Apps,High,Pod-based,Enterprise K8s,Simple applications
+Azure,Database,Azure SQL,SQL Server,PostgreSQL Flex,Medium,Vertical,Windows/.NET shops,Open source preference
+Azure,Database,Cosmos DB,Multi-model,DynamoDB,Medium,RU-based,Global distribution,Cost optimization
+Multi-Cloud,IaC,Terraform,Infrastructure,Pulumi/CloudFormation,Free (Open),N/A,Multi-cloud;Team collaboration,AWS-only (use CDK)
+Multi-Cloud,IaC,Pulumi,Infrastructure (Code),Terraform,Free (Open),N/A,Developers prefer code,Ops team preference for HCL
+Multi-Cloud,Secrets,HashiCorp Vault,Secrets management,Cloud KMS,Self-hosted,N/A,Multi-cloud;Dynamic secrets,Simple use cases
+Multi-Cloud,Monitoring,Datadog,Observability,Prometheus+Grafana,High,Per-host,Full-stack monitoring,Budget constraints
+Multi-Cloud,Monitoring,Prometheus+Grafana,Metrics/Dashboards,Datadog,Free (Open),N/A,Kubernetes native;Cost-effective,Managed solution needed

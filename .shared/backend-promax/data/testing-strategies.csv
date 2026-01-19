@@ -1,0 +1,15 @@
+Category,Test_Type,Framework,Coverage_Target,When_To_Use,Key_Patterns,Anti_Patterns
+API,Unit Test,Jest/Vitest/pytest,80%+,Every function/method,Mock external dependencies; Test edge cases,Testing implementation details instead of behavior
+API,Integration Test,Supertest/httpx/Postman,Core flows,API endpoints with real dependencies,Test request/response cycle; Validate schemas,Skipping error cases; Not testing auth flows
+Database,Repository Test,Testcontainers,CRUD operations,Data layer isolation,Use real DB in container; Test transactions,Using in-memory DB with different behavior
+Service,Contract Test,Pact/Spring Cloud Contract,API contracts,Microservice boundaries,Consumer-driven contracts; Schema validation,Outdated contracts; Missing versioning
+E2E,End-to-End,Playwright/Cypress/k6,Critical paths,User journeys,Test real user flows; Include auth,Too many E2E tests; Flaky tests
+Performance,Load Test,k6/Gatling/Locust,SLA targets,Pre-production,Ramp-up patterns; Identify bottlenecks,Testing in dev environment only
+Performance,Stress Test,k6/Artillery,Breaking point,Capacity planning,Push beyond limits; Monitor recovery,No baseline metrics; Ignoring memory leaks
+Security,SAST,SonarQube/Semgrep,All code paths,CI pipeline,Scan on every commit; Track trends,Ignoring false positives; No remediation SLA
+Security,DAST,OWASP ZAP/Burp,OWASP Top 10,Pre-deployment,Test runtime vulnerabilities,Running only once before release
+Security,Dependency Scan,Snyk/Dependabot,All dependencies,CI pipeline,Auto-update safe versions; SBOM generation,Ignoring critical CVEs; No version pinning
+Chaos,Resilience Test,Chaos Monkey/Gremlin,Critical services,Production (controlled),Kill instances; Network latency injection,No rollback plan; Testing in peak hours
+Data,Migration Test,Flyway/Liquibase,All migrations,Before deployment,Test up/down migrations; Data integrity,Untested rollback scripts
+Smoke,Health Check,Custom/k8s probes,All services,Post-deployment,Verify basic functionality; Fast feedback,Too comprehensive smoke tests
+Mutation,Code Quality,Stryker/PITest,High-risk code,Validate test effectiveness,Kill mutants to find weak tests,Running on entire codebase; Slow feedback

@@ -1,0 +1,21 @@
+Category,Tool,Purpose,Best_For,Integration,Cost_Model,Alternatives
+Metrics,Prometheus,Time-series metrics collection,Kubernetes native;Pull-based,Grafana;Alertmanager,Open Source,VictoriaMetrics;InfluxDB
+Metrics,Datadog,Full-stack monitoring,Enterprise;SaaS teams,APM;Logs;Traces,Per-host,New Relic;Dynatrace
+Metrics,CloudWatch,AWS native monitoring,AWS workloads,AWS services,Pay-per-metric,Prometheus;Datadog
+Visualization,Grafana,Dashboards and alerting,Multi-source visualization,Prometheus;Loki;Tempo,Open Source,Kibana;Datadog
+Logging,Loki,Log aggregation,Grafana stack,Grafana;Promtail,Open Source,Elasticsearch;Splunk
+Logging,Elasticsearch,Full-text log search,Complex queries;Analytics,Kibana;Logstash,License/Hosted,Loki;Splunk
+Logging,Fluentd/Fluent Bit,Log collection and routing,Kubernetes;Multi-destination,ELK;Loki;S3,Open Source,Logstash;Vector
+Logging,CloudWatch Logs,AWS log aggregation,AWS native,Lambda;ECS;EC2,Pay-per-GB,Loki;Datadog
+Tracing,Jaeger,Distributed tracing,Kubernetes;OpenTelemetry,OpenTelemetry;Prometheus,Open Source,Zipkin;Tempo
+Tracing,Tempo,Trace storage and query,Grafana stack;Cost-effective,Grafana;Loki,Open Source,Jaeger;X-Ray
+Tracing,AWS X-Ray,AWS native tracing,AWS services,Lambda;API Gateway,Pay-per-trace,Jaeger;Datadog APM
+Tracing,OpenTelemetry,Vendor-neutral instrumentation,Multi-cloud;Standardization,All backends,Open Source,Proprietary SDKs
+APM,New Relic,Application performance,Full-stack visibility,All languages,Per-GB,Datadog;Dynatrace
+APM,Elastic APM,Application monitoring,Elasticsearch users,ELK Stack,License/Hosted,Datadog;New Relic
+Alerting,PagerDuty,Incident management,On-call rotation,All monitoring tools,Per-user,OpsGenie;VictorOps
+Alerting,Alertmanager,Alert routing and silence,Prometheus stack,Prometheus;Grafana,Open Source,PagerDuty;OpsGenie
+Profiling,Pyroscope,Continuous profiling,Performance debugging,Grafana,Open Source,Parca;Datadog Profiling
+Error Tracking,Sentry,Error monitoring,Application errors,All languages,Per-event,Rollbar;Bugsnag
+Uptime,Uptime Robot,External monitoring,Public endpoints,Slack;PagerDuty,Free tier,Pingdom;StatusCake
+Status Page,Statuspage,Public status communication,Customer communication,PagerDuty;Datadog,SaaS,Cachet;Instatus

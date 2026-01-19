@@ -1,20 +1,20 @@
 <div align="center">
   <h1>Backend Pro Max Skill</h1>
-  <p><b>The Ultimate Backend Intelligence Hub for AI Coding Agents.</b></p>
+  <p><b>Backend Intelligence Hub for AI Coding Agents</b></p>
   <p>
     <img src="https://img.shields.io/badge/Version-2.0.0-00FF94?style=for-the-badge" alt="Version">
     <img src="https://img.shields.io/badge/License-MIT-purple?style=for-the-badge" alt="License">
     <img src="https://img.shields.io/badge/Platform-Multi--Agent-blue?style=for-the-badge" alt="Platform">
   </p>
-  <p><i>Level up your AI Assistant from a simple coder to a <b>Senior Backend Architect</b>.</i></p>
+  <p><i>Transform your AI assistant into a backend architecture expert.</i></p>
 </div>
 
 ---
 
-## 💎 What's New in v2.0?
+## What's New in v2.0
 
-### 🧠 Intelligent System Design Generation
-The flagship feature of v2.0 is the **Architecture Reasoning Engine** - an AI-powered brain that analyzes project requirements and generates a complete, high-level system design in seconds.
+### Intelligent System Design Generation
+The flagship feature of v2.0 is the **Architecture Reasoning Engine** - an AI-powered system that analyzes project requirements and generates comprehensive system designs.
 
 ```text
 +----------------------------------------------------------------------------------------+
@@ -52,63 +52,108 @@ The flagship feature of v2.0 is the **Architecture Reasoning Engine** - an AI-po
 
 ---
 
-## 🔥 Features
+## Features
 
-- **100+ Industry Rules**: Expert reasoning for Fintech, HealthTech, SaaS, Web3, AI platforms, and more.
-- **Architecture Persistence**: Decisions are auto-saved to `BACKEND_MASTER.md` so your AI never forgets.
-- **Security Deep Dive**: Hardened checklists based on OWASP Top 10 and industry-specific compliance (HIPAA, PCI-DSS).
-- **Performance Tuning**: Intelligent recommendations for indexing, caching, and low-latency throughput.
-- **Multi-Agent Support**: Native integration for 11+ different AI coding assistants.
+- **100+ Industry Rules**: Architecture reasoning for Fintech, HealthTech, SaaS, Web3, AI platforms, E-commerce, and more.
+- **18 Data Categories**: Comprehensive CSV knowledge base covering architecture, databases, security, testing, cloud patterns, and observability.
+- **Architecture Persistence**: Decisions are automatically saved to `BACKEND_MASTER.md` for reference.
+- **Security Protocols**: Hardened checklists based on OWASP Top 10, HIPAA, PCI-DSS, and GDPR.
+- **Performance Optimization**: Intelligent recommendations for indexing, caching, and low-latency throughput.
+- **Testing Strategies**: Unit, integration, E2E, performance, and security testing patterns.
+- **Cloud Patterns**: AWS, GCP, Azure, and multi-cloud architecture recommendations.
+- **Multi-Agent Support**: Native integration for 11+ AI coding assistants.
 
 ---
 
-## 🛠️ Installation
+## Installation
 
 ### Using CLI (Recommended)
-Install and initialize in seconds:
+Install and initialize using npx:
 
 ```bash
-# Install via npx (No global install needed)
 npx backend-promax-skill init
+```
 
-# OR use the One-line Installer (No Node.js required)
-# Windows (PowerShell):
+### One-line Installer (No Node.js Required)
+
+**Windows (PowerShell):**
+```powershell
 iwr -useb https://raw.githubusercontent.com/dsoftodin22999/backend-promax-skill/main/install.ps1 | iex
+```
 
-# Mac / Linux:
+**Mac / Linux:**
+```bash
 curl -fsSL https://raw.githubusercontent.com/dsoftodin22999/backend-promax-skill/main/install.sh | sh
 ```
 
 ---
 
-## 🧩 How to Use with AI Agents
+## AI Agent Integration
 
-| Assistant | Integration Method |
+| Agent | Integration Method |
 | :--- | :--- |
-| **Antigravity** | Use Slash Commands: `/backend-pro-max`, `/backend-db`, `/backend-secure` |
-| **Cursor / Windsurf** | Use Slash Command: `/backend-pro-max [industry] [project]` |
+| **Antigravity** | Slash Commands: `/backend-pro-max`, `/backend-db`, `/backend-secure` |
+| **Cursor / Windsurf** | Slash Command: `/backend-pro-max [industry] [project]` |
 | **Claude Code** | Automatic via `.claude/skills/` |
 | **GitHub Copilot** | Select from prompts menu or type `@backend-promax` |
-| **Gemini / Roo Code** | Native support via custom rules folders |
-| **Trae IDE** | Integrated via `.trae/skills/` (Beta) |
+| **Gemini CLI** | Native support via `.gemini/skills/` |
+| **Kiro** | Integrated via `.kiro/steering/` |
+| **Roo Code** | Native support via `.roo/rules/` |
+| **Codex CLI** | Integrated via `.codex/skills/` |
+| **Qoder** | Integrated via `.qoder/skills/` |
+| **Trae IDE** | Integrated via `.trae/skills/` |
 
 ---
 
-## 💡 Example Power Prompts
+## Example Prompts
 
-- `"/backend-pro-max 'Fintech' 'CryptoExchange'"`
-- `"Based on the database-decision-matrix, pick the best storage for a real-time chat app."`
-- `"Audit my current code against the security pre-delivery checklist."`
-- `"Generate an Idempotency strategy for this payment integration."`
+```
+/backend-pro-max "Fintech" "CryptoExchange"
+```
+
+```
+Based on the database-decision-matrix, recommend the optimal storage for a real-time chat application.
+```
+
+```
+Audit my current API code against the security checklist.
+```
+
+```
+Generate an idempotency strategy for this payment integration.
+```
+
+```
+What testing strategy should I use for this microservices architecture?
+```
 
 ---
 
-## 🎨 System Flow
+## Knowledge Base
+
+The skill includes 18 comprehensive data files:
+
+| Category | Files |
+| :--- | :--- |
+| **Architecture** | `backend-reasoning.csv`, `architecture-patterns.csv`, `tech-stacks.csv` |
+| **Database** | `database-decision-matrix.csv`, `caching-strategies.csv` |
+| **Security** | `security-deep-dive.csv`, `anti-patterns.csv` |
+| **Performance** | `performance-optimization-guide.csv`, `reliability-strategies.csv` |
+| **API Design** | `api-design-guidelines.csv`, `api-versioning-guide.csv`, `error-handling-patterns.csv` |
+| **Testing** | `testing-strategies.csv` |
+| **Cloud** | `cloud-patterns.csv` |
+| **Observability** | `observability-stack.csv` |
+| **DevOps** | `devops-deployment.csv` |
+| **Edge Cases** | `edge-case-reasoning.csv`, `pre-delivery-checklist.csv` |
+
+---
+
+## System Flow
 
 ```mermaid
 graph LR
     A[Requirement] --> B{Reasoning Engine}
-    B --> C[(100+ Industry Rules)]
+    B --> C[(18 Data Categories)]
     C --> D[Architecture Report]
     D --> E[BACKEND_MASTER.md]
     E --> F[Code Implementation]
@@ -116,7 +161,12 @@ graph LR
 
 ---
 
+## License
+
+MIT License - See [LICENSE](LICENSE) for details.
+
+---
+
 <div align="center">
   <p>Copyright © 2026 <b>Odin from Dsoft Team</b></p>
-  <p><i>"Don't just write code. Architect systems."</i></p>
 </div>

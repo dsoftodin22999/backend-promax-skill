@@ -1,5 +1,5 @@
-# Backend Pro Max Skill Installer
-# Cách dùng: .\install_to_project.ps1 -TargetProject "C:\du-an-cua-ban"
+# Backend Pro Max Skill - Local Project Installer
+# Usage: .\install_to_project.ps1 -TargetProject "C:\path\to\your\project"
 
 param (
     [Parameter(Mandatory=$true)]
@@ -7,8 +7,8 @@ param (
 )
 
 if (-not (Test-Path $TargetProject)) {
-    Write-Error "Dường dẫn dự án không tồn tại: $TargetProject"
-    exit
+    Write-Error "Project path does not exist: $TargetProject"
+    exit 1
 }
 
 $ItemsToCopy = @(
@@ -24,17 +24,18 @@ $ItemsToCopy = @(
     ".roo",
     ".gemini",
     ".shared",
-    ".cursorrules",
-    "CLAUDE.md",
-    "README.md"
+    ".cursorrules"
 )
 
 Write-Host "`n====================================================" -ForegroundColor Cyan
-Write-Host "   BACKEND PRO MAX v2.0 - INSTALLER" -ForegroundColor White -BackgroundColor Blue
-Write-Host "   (c) 2026 Odin from Dsoft Team" -ForegroundColor Cyan
+Write-Host "   BACKEND PRO MAX v2.0 - LOCAL INSTALLER" -ForegroundColor White -BackgroundColor DarkBlue
+Write-Host "   Backend Intelligence for AI Coding Agents" -ForegroundColor Cyan
 Write-Host "====================================================`n" -ForegroundColor Cyan
 
 Write-Host "Target Project: $TargetProject" -ForegroundColor Yellow
+Write-Host ""
+
+$successCount = 0
 
 foreach ($item in $ItemsToCopy) {
     $source = Join-Path $PSScriptRoot $item
@@ -43,13 +44,15 @@ foreach ($item in $ItemsToCopy) {
     if (Test-Path $source) {
         Write-Host "[COPYING] $item..." -ForegroundColor Gray
         Copy-Item -Path $source -Destination $dest -Recurse -Force
+        $successCount++
     }
 }
 
-Write-Host "`n[SUCCESS] Backend Pro Max Skill v2.0 integrated!" -ForegroundColor Green
+Write-Host "`n[SUCCESS] Backend Pro Max Skill v2.0 installed!" -ForegroundColor Green
+Write-Host "Copied $successCount components to your project." -ForegroundColor Gray
 Write-Host "----------------------------------------------------" -ForegroundColor Cyan
-Write-Host "HOW TO USE:" -ForegroundColor White
+Write-Host "NEXT STEPS:" -ForegroundColor White
 Write-Host "1. Open your project in Cursor, Claude Code, or Windsurf."
-Write-Host "2. Use the '/backend-pro-max' command to design your system."
-Write-Host "3. Check 'BACKEND_MASTER.md' to view the architecture."
+Write-Host "2. Use the '/backend-pro-max' command to generate system design."
+Write-Host "3. View the generated architecture in 'BACKEND_MASTER.md'."
 Write-Host "----------------------------------------------------`n" -ForegroundColor Cyan

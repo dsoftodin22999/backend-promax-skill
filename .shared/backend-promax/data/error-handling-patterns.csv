@@ -1,0 +1,15 @@
+Category,Pattern_Name,Implementation,HTTP_Status,Response_Format,Use_Case,Anti_Pattern
+Validation,Input Validation Error,Return field-specific errors with codes,400,{"error": "VALIDATION_ERROR"; "details": [{"field": "email"; "message": "Invalid format"}]},User input errors,Generic "Bad Request" message
+Auth,Authentication Failed,Generic message to prevent enumeration,401,{"error": "UNAUTHORIZED"; "message": "Invalid credentials"},Login failures,Revealing "user not found" vs "wrong password"
+Auth,Authorization Denied,Clear permission message,403,{"error": "FORBIDDEN"; "message": "Insufficient permissions"},Access control,Returning 404 to hide resources
+Resource,Not Found,Resource-specific message,404,{"error": "NOT_FOUND"; "message": "User not found"; "resource": "user"},Missing resources,Leaking internal IDs
+Conflict,Resource Conflict,State-based error details,409,{"error": "CONFLICT"; "message": "Email already exists"},Duplicate creation,Generic server error
+Rate Limit,Too Many Requests,Include retry-after header,429,{"error": "RATE_LIMITED"; "retry_after": 60},Throttling,No retry information
+Server,Internal Error,Log details internally; generic response,500,{"error": "INTERNAL_ERROR"; "request_id": "abc123"},Unexpected failures,Exposing stack traces
+Server,Service Unavailable,Include maintenance window if known,503,{"error": "SERVICE_UNAVAILABLE"; "retry_after": 300},Maintenance/Overload,No retry guidance
+Timeout,Gateway Timeout,Upstream service identification,504,{"error": "TIMEOUT"; "service": "payment-gateway"},Dependency timeout,Cascading timeouts
+Business,Domain Error,Business rule violation with code,422,{"error": "BUSINESS_RULE_VIOLATION"; "code": "INSUFFICIENT_BALANCE"},Business logic errors,HTTP 400 for all errors
+Idempotency,Duplicate Request,Return original response,200/409,{"error": "DUPLICATE_REQUEST"; "original_request_id": "xyz"},Retry handling,Processing duplicate requests
+Partial,Partial Success,Detail successful and failed items,207,{"status": "PARTIAL"; "succeeded": 8; "failed": 2; "errors": [...]},Batch operations,All-or-nothing for batches
+Deprecation,Deprecated Endpoint,Warning header + sunset date,200,Header: Deprecation: true; Sunset: Sat 31 Dec 2024,API evolution,Silent deprecation
+Circuit,Circuit Open,Service degradation info,503,{"error": "SERVICE_DEGRADED"; "fallback": true},Circuit breaker open,No fallback response

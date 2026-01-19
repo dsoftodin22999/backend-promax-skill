@@ -1,7 +1,7 @@
 {
     "name": "backend-promax-skill",
     "version": "2.0.0",
-    "description": "The Ultimate Backend Intelligence Hub for AI Coding Agents.",
+    "description": "Backend Intelligence Hub for AI Coding Agents - Architecture, Database, Security, and Performance reasoning.",
     "main": "index.js",
     "bin": {
         "backend-promax-skill": "./bin/cli.js"
@@ -13,17 +13,24 @@
         "ai",
         "backend",
         "architecture",
+        "database",
+        "security",
         "cursor",
         "windsurf",
         "claude",
-        "claude",
-        "antigravity"
+        "antigravity",
+        "copilot",
+        "gemini"
     ],
     "author": "Odin from Dsoft Team",
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/nextlevelbuilder/backend-promax-skill.git"
+        "url": "https://github.com/dsoftodin22999/backend-promax-skill.git"
+    },
+    "homepage": "https://github.com/dsoftodin22999/backend-promax-skill",
+    "bugs": {
+        "url": "https://github.com/dsoftodin22999/backend-promax-skill/issues"
     },
     "engines": {
         "node": ">=14.0.0"

@@ -1,0 +1,11 @@
+Strategy,Implementation,Pros,Cons,Best_For,Example,Complexity
+URI Path,/v1/users or /v2/users,Clear versioning;Easy to cache;Browser testable,URL pollution;Hard to evolve,Public APIs;REST APIs,GET /v1/users,Low
+Query Parameter,/users?version=1,Easy to implement;Optional versioning,Easy to miss;Cache issues,Internal APIs;Gradual migration,GET /users?version=1,Low
+Header,Accept: application/vnd.api+json;version=1,Clean URLs;Content negotiation,Harder to test;Hidden,API platforms;GraphQL,Accept: application/vnd.myapi.v2+json,Medium
+Content-Type,Content-Type: application/vnd.api.v2+json,Standard HTTP;Explicit,Complex parsing,Media type versioning,Content-Type: application/vnd.company.v2+json,Medium
+Custom Header,X-API-Version: 2,Flexible;Clear intent,Non-standard;Tooling issues,Enterprise APIs,X-API-Version: 2,Low
+Hostname,v1.api.example.com,Complete isolation;Easy routing,Infrastructure overhead;DNS management,Major version changes,https://v2.api.example.com/users,High
+No Versioning (Evolvable),Additive changes only,Simple;Forward compatible,Breaking changes hard,Internal microservices,Add new fields without version,Low
+Semantic Versioning,Major.Minor.Patch in response,Clear compatibility,Overhead for simple APIs,SDKs;Libraries,{"version": "2.1.0"},Medium
+Date-Based,2024-01-15 in header/path,Clear timeline;Easy deprecation,Many versions to maintain,Stripe-style APIs,Stripe-Version: 2024-01-15,Medium
+GraphQL Schema,Schema deprecation directives,Fine-grained;Field-level,Complexity;Tooling needed,GraphQL APIs,@deprecated(reason: "Use newField"),High

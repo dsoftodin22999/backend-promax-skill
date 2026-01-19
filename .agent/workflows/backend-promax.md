@@ -1,6 +1,10 @@
-# Backend Pro Max v2.0 - Senior Architecture Reasoning
+---
+description: Backend Pro Max v2.0 - Architecture Reasoning Commands
+---
 
-This is the brain of a Senior Backend Architect. Use the Slash Commands below to receive senior-level technical consulting.
+# Backend Pro Max v2.0 - Architecture Reasoning
+
+Use these commands to receive architecture consulting and system design recommendations.
 
 ## Slash Commands
 
@@ -21,8 +25,24 @@ This is the brain of a Senior Backend Architect. Use the Slash Commands below to
 2. Run command: `python .shared/backend-promax/search_logic.py "all" --domain security-deep-dive`
 3. Audit the code against the Backend Pro Max security checklist.
 
-## Senior Priorities
-- **Idempotency**: "Funds not deducted, code does not proceed."
+### `/backend-test` [project_type]
+// turbo
+1. Run command: `python .shared/backend-promax/search_logic.py "[project_type]" --domain testing-strategies`
+2. Recommend appropriate testing strategies based on the project type.
+
+### `/backend-cloud` [service_category]
+// turbo
+1. Run command: `python .shared/backend-promax/search_logic.py "[service_category]" --domain cloud-patterns`
+2. Compare cloud service options and recommend the optimal choice.
+
+### `/backend-observability`
+// turbo
+1. Run command: `python .shared/backend-promax/search_logic.py "all" --domain observability-stack`
+2. Recommend observability tools and monitoring setup for the project.
+
+## Architecture Priorities
+
+- **Idempotency**: All write/POST APIs must support Idempotency-Key.
 - **Performance**: Latency < 100ms for core APIs.
 - **Reliability**: Zero single point of failure.
 - **Cost**: Optimize infrastructure cost starting from the design phase.
