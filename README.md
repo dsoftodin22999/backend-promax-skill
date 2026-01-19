@@ -1,6 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/nextlevelbuilder/ui-ux-pro-max-skill/main/assets/logo.png" width="120" height="120" alt="Backend Pro Max Logo">
-  <h1>Backend Pro Max Skill v2.0</h1>
+  <h1>Backend Pro Max Skill</h1>
   <p><b>The Ultimate Backend Intelligence Hub for AI Coding Agents.</b></p>
   <p>
     <img src="https://img.shields.io/badge/Version-2.0.0-00FF94?style=for-the-badge" alt="Version">
