@@ -1,96 +1,123 @@
-# 🧠 Backend Pro Max Skill v2.0 (Extreme Detail)
-
-> **The Ultimate Backend Intelligence Hub for AI Coding Agents.**
-> **Copyright © 2026 Odin from Dsoft Team.**
-> Level up your AI from "Coder" to "Senior Backend Architect" with research data covering 100+ industries.
-
----
-
-## 🚀 Key Features (v2.0)
-
-### 1. Intelligent System Design Generation
-AI reasoning engine that automatically analyzes project requirements and provides comprehensive recommendations: Architecture, Stack, Database, Security, and Anti-patterns.
-
-### 2. 100+ Industry-Specific Reasoning Rules
-In-depth reasoning data for various sectors:
-- **Finance**: Fintech, Banking, Crypto, Trading.
-- **Healthcare**: EHR, Telemedicine, Pharma.
-- **SaaS**: Micro SaaS, B2B Enterprise, DevTools.
-- **Emerging**: AI/ML, Web3, IoT, Quantum Computing.
-
-### 3. Architecture Persistence (`BACKEND_MASTER.md`)
-Maintains a "Source of Truth" for project architecture across chat sessions, ensuring the AI never forgets critical design decisions.
+<div align="center">
+  <img src="https://raw.githubusercontent.com/nextlevelbuilder/ui-ux-pro-max-skill/main/assets/logo.png" width="120" height="120" alt="Backend Pro Max Logo">
+  <h1>Backend Pro Max Skill v2.0</h1>
+  <p><b>The Ultimate Backend Intelligence Hub for AI Coding Agents.</b></p>
+  <p>
+    <img src="https://img.shields.io/badge/Version-2.0.0-00FF94?style=for-the-badge" alt="Version">
+    <img src="https://img.shields.io/badge/License-MIT-purple?style=for-the-badge" alt="License">
+    <img src="https://img.shields.io/badge/Platform-Multi--Agent-blue?style=for-the-badge" alt="Platform">
+  </p>
+  <p><i>Level up your AI Assistant from a simple coder to a <b>Senior Backend Architect</b>.</i></p>
+</div>
 
 ---
 
-## 🛠️ Installation (3 Methods)
+## 💎 What's New in v2.0?
 
-### 🚀 Method 1: One-line Installer (Recommended - No Node.js required)
-Instant installation with a single command.
+### 🧠 Intelligent System Design Generation
+The flagship feature of v2.0 is the **Architecture Reasoning Engine** - an AI-powered brain that analyzes project requirements and generates a complete, high-level system design in seconds.
 
-**Windows (PowerShell):**
-```powershell
-iwr -useb https://raw.githubusercontent.com/dsoftodin22999/backend-promax-skill/main/install.ps1 | iex
+```text
++----------------------------------------------------------------------------------------+
+| TARGET: MoneyGuard - RECOMMENDED BACKEND ARCHITECTURE                                  |
++----------------------------------------------------------------------------------------+
+|                                                                                        |
+| DOMAIN: Fintech (High Sensitivity)                                                     |
+| PATTERN: Event-Driven Architecture (EDA) + Micro-segmentation                          |
+|                                                                                        |
+| CORE STACK:                                                                            |
+|   - Language: Go (Fiber) / Rust (Actix)                                                |
+|   - Messaging: Apache Kafka / RabbitMQ                                                 |
+|   - Auth: OAuth2 + OIDC (Keycloak)                                                     |
+|                                                                                        |
+| DATABASE STRATEGY:                                                                     |
+|   - Primary: PostgreSQL (ACID compliant)                                               |
+|   - Caching: Redis (Cluster mode)                                                      |
+|   - Immutable: Amazon QLDB (Ledger for transactions)                                   |
+|                                                                                        |
+| SECURITY PROTOCOLS:                                                                    |
+|   - Encryption: AES-256 (At rest) + mTLS (In transit)                                  |
+|   - Resilience: Circuit Breakers + Throttling                                          |
+|                                                                                        |
+| ANTI-PATTERNS TO AVOID:                                                                |
+|   - [!] No Firebase for core financial ledger                                          |
+|   - [!] No client-side balance calculations                                            |
+|                                                                                        |
+| PRE-DELIVERY CHECKLIST:                                                                |
+|   [ ] Idempotency keys implemented on all write APIs                                   |
+|   [ ] Distributed Tracing (OpenTelemetry) configured                                   |
+|   [ ] Secrets managed via HashiCorp Vault                                              |
+|                                                                                        |
++----------------------------------------------------------------------------------------+
 ```
 
-**Mac / Linux:**
+---
+
+## 🔥 Features
+
+- **100+ Industry Rules**: Expert reasoning for Fintech, HealthTech, SaaS, Web3, AI platforms, and more.
+- **Architecture Persistence**: Decisions are auto-saved to `BACKEND_MASTER.md` so your AI never forgets.
+- **Security Deep Dive**: Hardened checklists based on OWASP Top 10 and industry-specific compliance (HIPAA, PCI-DSS).
+- **Performance Tuning**: Intelligent recommendations for indexing, caching, and low-latency throughput.
+- **Multi-Agent Support**: Native integration for 11+ different AI coding assistants.
+
+---
+
+## 🛠️ Installation
+
+### Using CLI (Recommended)
+Install and initialize in seconds:
+
 ```bash
+# Install via npx (No global install needed)
+npx backend-promax-skill init
+
+# OR use the One-line Installer (No Node.js required)
+# Windows (PowerShell):
+iwr -useb https://raw.githubusercontent.com/dsoftodin22999/backend-promax-skill/main/install.ps1 | iex
+
+# Mac / Linux:
 curl -fsSL https://raw.githubusercontent.com/dsoftodin22999/backend-promax-skill/main/install.sh | sh
 ```
 
-### 📦 Method 2: NPM CLI (Standard for Node.js devs)
-If you have Node.js installed:
-```bash
-npx backend-promax-skill init
-```
-
-### 📂 Method 3: Internal Script
-If you downloaded the source locally:
-```powershell
-.\install_to_project.ps1 -TargetProject "C:\path\to\your-project"
-```
-
 ---
 
-## 🧩 Multi-Platform Support (11 AI Agents)
+## 🧩 How to Use with AI Agents
 
-| AI Assistant | How to Use |
+| Assistant | Integration Method |
 | :--- | :--- |
-| **Antigravity** | Use Slash Commands `/backend-pro-max`, `/backend-db`, `/backend-secure` |
-| **Cursor IDE** | Automatic via `.cursorrules` or type `@Rules /reason` |
-| **Claude Code** | Automatically recognized via `.claude/skills/` |
-| **Windsurf** | Integrated via `.windsurf/workflows/backend-promax.md` |
-| **Trae IDE** | Compatible via `.trae/skills/backend-promax/` |
-| **GitHub Copilot** | Integrated via `.github/prompts/backend-promax.prompt.md` |
-| **Gemini CLI** | Automatic via `.gemini/skills/backend-promax/` |
-| **Roo Code** | Integrated via `.roo/rules/backend-promax.md` |
-| **Kiro** | Integrated via `.kiro/steering/backend-promax.md` |
-| **Qoder** | Integrated via `.qoder/skills/backend-promax.md` |
-| **Codex CLI** | Integrated via `.codex/skills/backend-promax/` |
+| **Antigravity** | Use Slash Commands: `/backend-pro-max`, `/backend-db`, `/backend-secure` |
+| **Cursor / Windsurf** | Use Slash Command: `/backend-pro-max [industry] [project]` |
+| **Claude Code** | Automatic via `.claude/skills/` |
+| **GitHub Copilot** | Select from prompts menu or type `@backend-promax` |
+| **Gemini / Roo Code** | Native support via custom rules folders |
+| **Trae IDE** | Integrated via `.trae/skills/` (Beta) |
 
 ---
 
-## 🎨 System Architecture
+## 💡 Example Power Prompts
+
+- `"/backend-pro-max 'Fintech' 'CryptoExchange'"`
+- `"Based on the database-decision-matrix, pick the best storage for a real-time chat app."`
+- `"Audit my current code against the security pre-delivery checklist."`
+- `"Generate an Idempotency strategy for this payment integration."`
+
+---
+
+## 🎨 System Flow
 
 ```mermaid
-graph TD
-    A[User Request] --> B{Reasoning Engine};
-    B --> C[100+ Industry Rules];
-    B --> D[Design Patterns];
-    B --> E[Security Checklists];
-    C & D & E --> F[System Design Report];
-    F --> G[BACKEND_MASTER.md];
-    G --> H[Consistent Code Generation];
+graph LR
+    A[Requirement] --> B{Reasoning Engine}
+    B --> C[(100+ Industry Rules)]
+    C --> D[Architecture Report]
+    D --> E[BACKEND_MASTER.md]
+    E --> F[Code Implementation]
 ```
 
 ---
 
-## 💡 "Pro Max" Command Examples
-
-- `/backend-pro-max "Fintech" "MoneyGuard"` (Generate professional Fintech architecture)
-- `/backend-db "Time-series data for IoT"` (Pick optimal database for IoT)
-- "Based on v2.0 rules, design the Idempotency logic for this payment system."
-
----
-> [!IMPORTANT]
-> Backend Pro Max v2.0 doesn't just write code; it **designs systems**. Ensure your project always meets Senior standards for reliability and performance.
+<div align="center">
+  <p>Copyright © 2026 <b>Odin from Dsoft Team</b></p>
+  <p><i>"Don't just write code. Architect systems."</i></p>
+</div>
