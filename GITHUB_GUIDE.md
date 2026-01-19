@@ -13,7 +13,7 @@ git init
 git add .
 git commit -m "Initial commit Backend Pro Max v2.0"
 # Tạo repo mới trên GitHub tên là 'backend-promax-skill'
-git remote add origin https://github.com/YOUR_USERNAME/backend-promax-skill.git
+git remote add origin https://github.com/dsoftodin22999/backend-promax-skill.git
 git push -u origin main
 ```
 
@@ -28,7 +28,7 @@ git init
 git add .
 git commit -m "Initial commit Website Brand"
 # Tạo repo mới trên GitHub tên là 'backend-promax-website'
-git remote add origin https://github.com/YOUR_USERNAME/backend-promax-website.git
+git remote add origin https://github.com/dsoftodin22999/backend-promax-website.git
 git push -u origin main
 ```
 
