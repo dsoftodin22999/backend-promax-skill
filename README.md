@@ -68,9 +68,11 @@ The flagship feature of v2.0 is the **Architecture Reasoning Engine** - an AI-po
 ## Installation
 
 ### Using CLI (Recommended)
-Install and initialize using npx:
+
+Navigate to your project directory and run:
 
 ```bash
+cd /path/to/your/project
 npx backend-promax-skill init
 ```
 
@@ -78,13 +80,75 @@ npx backend-promax-skill init
 
 **Windows (PowerShell):**
 ```powershell
+cd C:\path\to\your\project
 iwr -useb https://raw.githubusercontent.com/dsoftodin22999/backend-promax-skill/main/install.ps1 | iex
 ```
 
 **Mac / Linux:**
 ```bash
+cd /path/to/your/project
 curl -fsSL https://raw.githubusercontent.com/dsoftodin22999/backend-promax-skill/main/install.sh | sh
 ```
+
+### Local Installation (From Cloned Repo)
+
+```powershell
+.\install_to_project.ps1 -TargetProject "C:\path\to\your\project"
+```
+
+> 📖 **For detailed integration instructions, see [INTEGRATION.md](INTEGRATION.md)**
+
+---
+
+## Quick Start Guide
+
+### Step 1: Install to Your Project
+
+```bash
+cd my-project
+npx backend-promax-skill init
+```
+
+### Step 2: Open Your AI Coding Assistant
+
+Open your project in **Cursor**, **Windsurf**, **Claude Code**, or any supported AI agent.
+
+### Step 3: Generate Architecture
+
+Type in the chat:
+
+```
+/backend-pro-max "E-commerce" "MarketplaceApp"
+```
+
+### Step 4: Review the Output
+
+Check the generated `BACKEND_MASTER.md` file for your architecture recommendations.
+
+### Step 5: Continue Development
+
+Ask follow-up questions:
+
+```
+"Based on BACKEND_MASTER.md, create the initial folder structure."
+```
+
+```
+"Implement the database schema following the architecture report."
+```
+
+---
+
+## Available Commands
+
+| Command | Description | Example |
+| :--- | :--- | :--- |
+| `/backend-pro-max [industry] [project]` | Generate full architecture report | `/backend-pro-max "Fintech" "PaymentApp"` |
+| `/backend-db [data_type]` | Database selection recommendation | `/backend-db "real-time chat"` |
+| `/backend-secure` | Security audit of current code | `/backend-secure` |
+| `/backend-test [project_type]` | Testing strategy recommendations | `/backend-test "microservices"` |
+| `/backend-cloud [service]` | Cloud service comparison | `/backend-cloud "compute"` |
+| `/backend-observability` | Observability tool recommendations | `/backend-observability` |
 
 ---
 
@@ -107,24 +171,29 @@ curl -fsSL https://raw.githubusercontent.com/dsoftodin22999/backend-promax-skill
 
 ## Example Prompts
 
+**Generate Architecture:**
 ```
 /backend-pro-max "Fintech" "CryptoExchange"
 ```
 
+**Database Selection:**
 ```
 Based on the database-decision-matrix, recommend the optimal storage for a real-time chat application.
 ```
 
+**Security Audit:**
 ```
 Audit my current API code against the security checklist.
 ```
 
-```
-Generate an idempotency strategy for this payment integration.
-```
-
+**Testing Strategy:**
 ```
 What testing strategy should I use for this microservices architecture?
+```
+
+**Cloud Recommendations:**
+```
+Compare AWS Lambda vs Cloud Run for my serverless API.
 ```
 
 ---
@@ -148,6 +217,26 @@ The skill includes 18 comprehensive data files:
 
 ---
 
+## Running the Reasoning Engine Manually
+
+You can run the reasoning engine directly using Python:
+
+```bash
+# Generate architecture report
+python .shared/backend-promax/search_logic.py "Fintech" --system-design --project "MyApp" --persist
+
+# Search for database recommendations
+python .shared/backend-promax/search_logic.py "cache" --domain database-decision-matrix
+
+# Search for security guidelines
+python .shared/backend-promax/search_logic.py "authentication" --domain security-deep-dive
+
+# Search for testing strategies
+python .shared/backend-promax/search_logic.py "api" --domain testing-strategies
+```
+
+---
+
 ## System Flow
 
 ```mermaid
@@ -158,6 +247,13 @@ graph LR
     D --> E[BACKEND_MASTER.md]
     E --> F[Code Implementation]
 ```
+
+---
+
+## Documentation
+
+- **[INTEGRATION.md](INTEGRATION.md)** - Detailed integration guide
+- **[CLAUDE.md](CLAUDE.md)** - Quick reference for Claude Code users
 
 ---
 
